@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.sky-learner.top/categories/index.html</loc>
+    <loc>https://www.sky-learner.top/about/index.html</loc>
     
     <lastmod>2025-11-27</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.sky-learner.top/about/index.html</loc>
+    <loc>https://www.sky-learner.top/categories/index.html</loc>
     
     <lastmod>2025-11-27</lastmod>
     
@@ -58,7 +58,7 @@
 
   <url>
     <loc>https://www.sky-learner.top/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,70 +66,70 @@
   
   <url>
     <loc>https://www.sky-learner.top/tags/Security/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/Linux/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/Attack/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/ARM/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/Compiler/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/CS323/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/Parsing/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/SLR/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/CLR/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sky-learner.top/tags/LALR/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -138,7 +138,7 @@
   
   <url>
     <loc>https://www.sky-learner.top/categories/Computer-Science/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
