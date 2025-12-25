@@ -40,9 +40,9 @@ will fail, because the file is only readable to normal users.&lt;/p&gt;</summary
     
     <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
     
-    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
-    
     <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    
+    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
     
   </entry>
   
@@ -88,11 +88,11 @@ Install a Kernel Module&lt;/h5&gt;
     
     <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
     
-    <category term="ARM" scheme="https://www.sky-learner.top/tags/ARM/"/>
+    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
     
     <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
     
-    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    <category term="ARM" scheme="https://www.sky-learner.top/tags/ARM/"/>
     
   </entry>
   
