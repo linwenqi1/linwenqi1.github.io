@@ -1289,7 +1289,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff75ff;
+    background: #18ff3c;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2921,4 +2921,18 @@ header.header {
 .site-author-image {
   max-width: 64px;
   max-height: 64px;
+}
+code {
+  color: #476582;
+  background-color: rgba(27,31,35,0.05);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 90%;
+}
+pre code {
+  color: inherit !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: inherit !important;
 }
