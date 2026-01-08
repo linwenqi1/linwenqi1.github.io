@@ -268,7 +268,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-01-08 21:51:25 / 修改时间：21:59:36" itemprop="dateCreated datePublished" datetime="2026-01-08T21:51:25+08:00">2026-01-08</time>
+      <time title="创建时间：2026-01-08 21:51:25 / 修改时间：22:05:00" itemprop="dateCreated datePublished" datetime="2026-01-08T21:51:25+08:00">2026-01-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,33 +314,15 @@ partition from 30GB to 40GB without losing any data.</p>
 <p>After increasing the virtual disk to 40GB, running <code>lsblk</code>
 showed that the physical disk (<code>sda</code>) was 40GB, but the
 primary partition (<code>sda2</code>) was still stuck at 30GB.
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Output snippet</span></span><br><span class="line">sda      8:0    0    40G  0 disk </span><br><span class="line">└─sda2   8:2    0    30G  0 part /</span><br></pre></td></tr></table></figure></p>
-<h2 id="step-1-install-the-growth-tools">Step 1: Install the Growth
-Tools</h2>
-<p>We need <code>growpart</code>, a handy utility that can safely extend
-a partition while the system is running. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install cloud-guest-utils -y</span><br></pre></td></tr></table></figure></p>
-<h2 id="step-2-extend-the-partition">Step 2: Extend the Partition</h2>
-<p>We tell the system to expand the 2nd partition of the sda disk. Note
-the space between the disk name and the partition number:
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> growpart /dev/sda 2</span><br></pre></td></tr></table></figure></p>
-<h2 id="step-3-resize-the-filesystem">Step 3: Resize the Filesystem</h2>
-<p>Now that the “room” (partition) is bigger, we need to stretch the
-“carpet” (filesystem) to cover the new floor space.</p>
-<p>First, check your filesystem type: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -T /</span><br></pre></td></tr></table></figure></p>
-<p>Depending on the output (ext4 or xfs), run the corresponding
-command:</p>
-<h3 id="for-ext4-common-in-ubuntu">For ext4 (Common in Ubuntu)</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> resize2fs /dev/sda2</span><br></pre></td></tr></table></figure>
-<h3 id="for-xfs">For xfs</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> xfs_growfs /</span><br></pre></td></tr></table></figure>
-<h2 id="conclusion">Conclusion</h2>
-<p>Check the final result with <code>df -h /</code>. You should see the
-full capacity reflected in your root directory! <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Final check</span></span><br><span class="line">/dev/sda2        40G   21G   17G  55% /</span><br></pre></td></tr></table></figure></p>
-<h2 id="key-takeaway">Key Takeaway</h2>
-<p>Always remember the three-layer hierarchy: <strong>Physical Disk →
-Partition Table → Filesystem</strong>. You must expand them in that
-specific order.</p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Output snippet</span></span><br><span class="line">sda      8:0    0    40G  0 disk </span><br><span class="line">└─sda2   8:2    0    30G  0 part /</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/01/Linux-Disk-Expansion/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
