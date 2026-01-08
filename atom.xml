@@ -6,7 +6,7 @@
   <link href="https://www.sky-learner.top/atom.xml" rel="self"/>
   
   <link href="https://www.sky-learner.top/"/>
-  <updated>2025-12-24T08:03:34.037Z</updated>
+  <updated>2026-01-08T13:59:36.624Z</updated>
   <id>https://www.sky-learner.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Disk Expansion Guide</title>
+    <link href="https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/"/>
+    <id>https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/</id>
+    <published>2026-01-08T13:51:25.000Z</published>
+    <updated>2026-01-08T13:59:36.624Z</updated>
+    
+    <content type="html"><![CDATA[<p>Increasing the disk size in your VM settings (VMware/VirtualBox) isonly half the battle. The OS won’t automatically use that extra spaceuntil you manually update the partition table and the filesystem.</p><p>Here is a quick guide on how I expanded my <code>/dev/sda2</code>partition from 30GB to 40GB without losing any data.</p><h2 id="the-problem">The Problem</h2><p>After increasing the virtual disk to 40GB, running <code>lsblk</code>showed that the physical disk (<code>sda</code>) was 40GB, but theprimary partition (<code>sda2</code>) was still stuck at 30GB.<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Output snippet</span></span><br><span class="line">sda      8:0    0    40G  0 disk </span><br><span class="line">└─sda2   8:2    0    30G  0 part /</span><br></pre></td></tr></table></figure></p><h2 id="step-1-install-the-growth-tools">Step 1: Install the GrowthTools</h2><p>We need <code>growpart</code>, a handy utility that can safely extenda partition while the system is running. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install cloud-guest-utils -y</span><br></pre></td></tr></table></figure></p><h2 id="step-2-extend-the-partition">Step 2: Extend the Partition</h2><p>We tell the system to expand the 2nd partition of the sda disk. Notethe space between the disk name and the partition number:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> growpart /dev/sda 2</span><br></pre></td></tr></table></figure></p><h2 id="step-3-resize-the-filesystem">Step 3: Resize the Filesystem</h2><p>Now that the “room” (partition) is bigger, we need to stretch the“carpet” (filesystem) to cover the new floor space.</p><p>First, check your filesystem type: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -T /</span><br></pre></td></tr></table></figure></p><p>Depending on the output (ext4 or xfs), run the correspondingcommand:</p><h3 id="for-ext4-common-in-ubuntu">For ext4 (Common in Ubuntu)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> resize2fs /dev/sda2</span><br></pre></td></tr></table></figure><h3 id="for-xfs">For xfs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> xfs_growfs /</span><br></pre></td></tr></table></figure><h2 id="conclusion">Conclusion</h2><p>Check the final result with <code>df -h /</code>. You should see thefull capacity reflected in your root directory! <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Final check</span></span><br><span class="line">/dev/sda2        40G   21G   17G  55% /</span><br></pre></td></tr></table></figure></p><h2 id="key-takeaway">Key Takeaway</h2><p>Always remember the three-layer hierarchy: <strong>Physical Disk →Partition Table → Filesystem</strong>. You must expand them in thatspecific order.</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Increasing the disk size in your VM settings (VMware/VirtualBox) is
+only half the battle. The OS won’t automatically use that extra</summary>
+        
+      
+    
+    
+    
+    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    
+    
+    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Dirty COW Attack Lab</title>
@@ -38,9 +66,9 @@ will fail, because the file is only readable to normal users.&lt;/p&gt;</summary
     <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
     
     
-    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
-    
     <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    
+    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
     
     <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
     
@@ -66,13 +94,13 @@ Install a Kernel Module&lt;/h5&gt;
     <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
     
     
-    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
-    
     <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
     
-    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
+    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
     
     <category term="ARM" scheme="https://www.sky-learner.top/tags/ARM/"/>
+    
+    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
     
   </entry>
   

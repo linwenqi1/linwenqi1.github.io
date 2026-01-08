@@ -19,25 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.sky-learner.top","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github-dark","dark":"monokai-sublime"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat","show_result":true},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"twikoo","storage":true,"lazyload":false,"nav":null,"activeClass":"twikoo"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto","highlight":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="A blog focused on technology sharing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="https://www.sky-learner.top/tags/CLR/index.html">
+    <meta name="description" content="Increasing the disk size in your VM settings (VMware&#x2F;VirtualBox) is only half the battle. The OS won’t automatically use that extra space until you manually update the partition table and the filesyst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Disk Expansion Guide">
+<meta property="og:url" content="https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="A blog focused on technology sharing">
+<meta property="og:description" content="Increasing the disk size in your VM settings (VMware&#x2F;VirtualBox) is only half the battle. The OS won’t automatically use that extra space until you manually update the partition table and the filesyst">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-08T13:51:25.000Z">
+<meta property="article:modified_time" content="2026-01-08T13:59:36.624Z">
 <meta property="article:author" content="Lin Wenqi">
-<meta property="article:tag" content="Technology, Programming, Blog">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.sky-learner.top/tags/CLR/">
+<link rel="canonical" href="https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/CLR/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/","path":"2026/01/Linux-Disk-Expansion/","title":"Linux Disk Expansion Guide"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: CLR | My Blog</title>
+<title>Linux Disk Expansion Guide | My Blog</title>
   
 
 
@@ -151,7 +153,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -164,6 +166,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-problem"><span class="nav-number">1.</span> <span class="nav-text">The Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-1-install-the-growth-tools"><span class="nav-number">2.</span> <span class="nav-text">Step 1: Install the Growth
+Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-2-extend-the-partition"><span class="nav-number">3.</span> <span class="nav-text">Step 2: Extend the Partition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-3-resize-the-filesystem"><span class="nav-number">4.</span> <span class="nav-text">Step 3: Resize the Filesystem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-ext4-common-in-ubuntu"><span class="nav-number">4.1.</span> <span class="nav-text">For ext4 (Common in Ubuntu)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-xfs"><span class="nav-number">4.2.</span> <span class="nav-text">For xfs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#key-takeaway"><span class="nav-number">6.</span> <span class="nav-text">Key Takeaway</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,51 +232,168 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">CLR
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Lin Wenqi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog">
+      <meta itemprop="description" content="A blog focused on technology sharing">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux Disk Expansion Guide | My Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux Disk Expansion Guide
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
+
+      <time title="创建时间：2026-01-08 21:51:25 / 修改时间：21:59:36" itemprop="dateCreated datePublished" datetime="2026-01-08T21:51:25+08:00">2026-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Increasing the disk size in your VM settings (VMware/VirtualBox) is
+only half the battle. The OS won’t automatically use that extra space
+until you manually update the partition table and the filesystem.</p>
+<p>Here is a quick guide on how I expanded my <code>/dev/sda2</code>
+partition from 30GB to 40GB without losing any data.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>After increasing the virtual disk to 40GB, running <code>lsblk</code>
+showed that the physical disk (<code>sda</code>) was 40GB, but the
+primary partition (<code>sda2</code>) was still stuck at 30GB.
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Output snippet</span></span><br><span class="line">sda      8:0    0    40G  0 disk </span><br><span class="line">└─sda2   8:2    0    30G  0 part /</span><br></pre></td></tr></table></figure></p>
+<h2 id="step-1-install-the-growth-tools">Step 1: Install the Growth
+Tools</h2>
+<p>We need <code>growpart</code>, a handy utility that can safely extend
+a partition while the system is running. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install cloud-guest-utils -y</span><br></pre></td></tr></table></figure></p>
+<h2 id="step-2-extend-the-partition">Step 2: Extend the Partition</h2>
+<p>We tell the system to expand the 2nd partition of the sda disk. Note
+the space between the disk name and the partition number:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> growpart /dev/sda 2</span><br></pre></td></tr></table></figure></p>
+<h2 id="step-3-resize-the-filesystem">Step 3: Resize the Filesystem</h2>
+<p>Now that the “room” (partition) is bigger, we need to stretch the
+“carpet” (filesystem) to cover the new floor space.</p>
+<p>First, check your filesystem type: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -T /</span><br></pre></td></tr></table></figure></p>
+<p>Depending on the output (ext4 or xfs), run the corresponding
+command:</p>
+<h3 id="for-ext4-common-in-ubuntu">For ext4 (Common in Ubuntu)</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> resize2fs /dev/sda2</span><br></pre></td></tr></table></figure>
+<h3 id="for-xfs">For xfs</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> xfs_growfs /</span><br></pre></td></tr></table></figure>
+<h2 id="conclusion">Conclusion</h2>
+<p>Check the final result with <code>df -h /</code>. You should see the
+full capacity reflected in your root directory! <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Final check</span></span><br><span class="line">/dev/sda2        40G   21G   17G  55% /</span><br></pre></td></tr></table></figure></p>
+<h2 id="key-takeaway">Key Takeaway</h2>
+<p>Always remember the three-layer hierarchy: <strong>Physical Disk →
+Partition Table → Filesystem</strong>. You must expand them in that
+specific order.</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-11-26T12:00:00+08:00"
-              content="2025-11-26">
-          11-26
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/11/CS323-Assignment-4/" itemprop="url">
-            <span itemprop="name">CS323 Written Assignment 4 - SLR, CLR, and LALR Parsing</span>
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
       </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/Dirty-COW-Attack/" rel="prev" title="Dirty COW Attack Lab">
+                  <i class="fa fa-angle-left"></i> Dirty COW Attack Lab
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments"><div id="twikoo-comments"></div></div>
 </div>
   </main>
 
