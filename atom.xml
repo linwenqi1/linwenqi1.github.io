@@ -3,11 +3,11 @@
   <title>My Blog</title>
   
   <subtitle>Recording Technology and Life</subtitle>
-  <link href="https://www.sky-learner.top/atom.xml" rel="self"/>
+  <link href="http://blog.qirenova.com/atom.xml" rel="self"/>
   
-  <link href="https://www.sky-learner.top/"/>
+  <link href="http://blog.qirenova.com/"/>
   <updated>2026-04-15T10:45:36.206Z</updated>
-  <id>https://www.sky-learner.top/</id>
+  <id>http://blog.qirenova.com/</id>
   
   <author>
     <name>Lin Wenqi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>解决 VS Code 远程开发 C++ 插件“玄学”问题：为什么非要一个 settings.json？</title>
-    <link href="https://www.sky-learner.top/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
-    <id>https://www.sky-learner.top/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
+    <link href="http://blog.qirenova.com/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
+    <id>http://blog.qirenova.com/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
     <published>2026-04-15T10:00:00.000Z</published>
     <updated>2026-04-15T10:45:36.206Z</updated>
     
@@ -32,23 +32,23 @@ IntelliSense（智能感知）功能无法正常工作。表现为代码补全�
     
     
     
-    <category term="dev-tools" scheme="https://www.sky-learner.top/categories/dev-tools/"/>
+    <category term="dev-tools" scheme="http://blog.qirenova.com/categories/dev-tools/"/>
     
     
-    <category term="vscode" scheme="https://www.sky-learner.top/tags/vscode/"/>
+    <category term="vscode" scheme="http://blog.qirenova.com/tags/vscode/"/>
     
-    <category term="cpp" scheme="https://www.sky-learner.top/tags/cpp/"/>
+    <category term="cpp" scheme="http://blog.qirenova.com/tags/cpp/"/>
     
-    <category term="remote-development" scheme="https://www.sky-learner.top/tags/remote-development/"/>
+    <category term="remote-development" scheme="http://blog.qirenova.com/tags/remote-development/"/>
     
-    <category term="ssh" scheme="https://www.sky-learner.top/tags/ssh/"/>
+    <category term="ssh" scheme="http://blog.qirenova.com/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>Charles 抓包华为应用市场评论实验总结</title>
-    <link href="https://www.sky-learner.top/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    <id>https://www.sky-learner.top/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
+    <link href="http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
     <published>2026-03-15T12:53:58.000Z</published>
     <updated>2026-04-15T10:10:33.468Z</updated>
     
@@ -64,27 +64,27 @@ HAR 格式数据&lt;/p&gt;
     
     
     
-    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    <category term="Computer Science" scheme="http://blog.qirenova.com/categories/Computer-Science/"/>
     
-    <category term="SecurityResearch" scheme="https://www.sky-learner.top/categories/Computer-Science/SecurityResearch/"/>
+    <category term="SecurityResearch" scheme="http://blog.qirenova.com/categories/Computer-Science/SecurityResearch/"/>
     
     
-    <category term="PacketCapture" scheme="https://www.sky-learner.top/tags/PacketCapture/"/>
+    <category term="PacketCapture" scheme="http://blog.qirenova.com/tags/PacketCapture/"/>
     
-    <category term="AndroidSecurity" scheme="https://www.sky-learner.top/tags/AndroidSecurity/"/>
+    <category term="AndroidSecurity" scheme="http://blog.qirenova.com/tags/AndroidSecurity/"/>
     
-    <category term="Frida" scheme="https://www.sky-learner.top/tags/Frida/"/>
+    <category term="Frida" scheme="http://blog.qirenova.com/tags/Frida/"/>
     
-    <category term="CharlesProxy" scheme="https://www.sky-learner.top/tags/CharlesProxy/"/>
+    <category term="CharlesProxy" scheme="http://blog.qirenova.com/tags/CharlesProxy/"/>
     
-    <category term="SSLPinning" scheme="https://www.sky-learner.top/tags/SSLPinning/"/>
+    <category term="SSLPinning" scheme="http://blog.qirenova.com/tags/SSLPinning/"/>
     
   </entry>
   
   <entry>
     <title>Linux Disk Expansion Guide</title>
-    <link href="https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/"/>
-    <id>https://www.sky-learner.top/2026/01/Linux-Disk-Expansion/</id>
+    <link href="http://blog.qirenova.com/2026/01/Linux-Disk-Expansion/"/>
+    <id>http://blog.qirenova.com/2026/01/Linux-Disk-Expansion/</id>
     <published>2026-01-08T13:51:25.000Z</published>
     <updated>2026-01-27T04:08:44.778Z</updated>
     
@@ -104,17 +104,17 @@ primary partition (&lt;code&gt;sda2&lt;/code&gt;) was still stuck at 30GB.
     
     
     
-    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    <category term="Computer Science" scheme="http://blog.qirenova.com/categories/Computer-Science/"/>
     
     
-    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    <category term="Linux" scheme="http://blog.qirenova.com/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Dirty COW Attack Lab</title>
-    <link href="https://www.sky-learner.top/2025/11/Dirty-COW-Attack/"/>
-    <id>https://www.sky-learner.top/2025/11/Dirty-COW-Attack/</id>
+    <link href="http://blog.qirenova.com/2025/11/Dirty-COW-Attack/"/>
+    <id>http://blog.qirenova.com/2025/11/Dirty-COW-Attack/</id>
     <published>2025-11-26T12:00:00.000Z</published>
     <updated>2026-01-27T04:08:44.774Z</updated>
     
@@ -130,21 +130,21 @@ will fail, because the file is only readable to normal users.&lt;/p&gt;</summary
     
     
     
-    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    <category term="Computer Science" scheme="http://blog.qirenova.com/categories/Computer-Science/"/>
     
     
-    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
+    <category term="Security" scheme="http://blog.qirenova.com/tags/Security/"/>
     
-    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    <category term="Linux" scheme="http://blog.qirenova.com/tags/Linux/"/>
     
-    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
+    <category term="Attack" scheme="http://blog.qirenova.com/tags/Attack/"/>
     
   </entry>
   
   <entry>
     <title>Nailgun Attack Lab Analysis</title>
-    <link href="https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/"/>
-    <id>https://www.sky-learner.top/2025/11/Nailgun-Attack-Lab-Analysis/</id>
+    <link href="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/"/>
+    <id>http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/</id>
     <published>2025-11-26T10:00:00.000Z</published>
     <updated>2026-01-27T04:08:44.778Z</updated>
     
@@ -158,23 +158,23 @@ Install a Kernel Module&lt;/h5&gt;
     
     
     
-    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    <category term="Computer Science" scheme="http://blog.qirenova.com/categories/Computer-Science/"/>
     
     
-    <category term="Security" scheme="https://www.sky-learner.top/tags/Security/"/>
+    <category term="Security" scheme="http://blog.qirenova.com/tags/Security/"/>
     
-    <category term="Linux" scheme="https://www.sky-learner.top/tags/Linux/"/>
+    <category term="Linux" scheme="http://blog.qirenova.com/tags/Linux/"/>
     
-    <category term="Attack" scheme="https://www.sky-learner.top/tags/Attack/"/>
+    <category term="Attack" scheme="http://blog.qirenova.com/tags/Attack/"/>
     
-    <category term="ARM" scheme="https://www.sky-learner.top/tags/ARM/"/>
+    <category term="ARM" scheme="http://blog.qirenova.com/tags/ARM/"/>
     
   </entry>
   
   <entry>
     <title>CS323 Written Assignment 4 - SLR, CLR, and LALR Parsing</title>
-    <link href="https://www.sky-learner.top/2025/11/CS323-Assignment-4/"/>
-    <id>https://www.sky-learner.top/2025/11/CS323-Assignment-4/</id>
+    <link href="http://blog.qirenova.com/2025/11/CS323-Assignment-4/"/>
+    <id>http://blog.qirenova.com/2025/11/CS323-Assignment-4/</id>
     <published>2025-11-26T04:00:00.000Z</published>
     <updated>2026-01-27T04:08:44.774Z</updated>
     
@@ -254,20 +254,20 @@ class=&quot;math inline&quot;&gt;{$, (,), +,&lt;em&gt;a&lt;/em&gt;, &lt;em
     
     
     
-    <category term="Computer Science" scheme="https://www.sky-learner.top/categories/Computer-Science/"/>
+    <category term="Computer Science" scheme="http://blog.qirenova.com/categories/Computer-Science/"/>
     
     
-    <category term="Compiler" scheme="https://www.sky-learner.top/tags/Compiler/"/>
+    <category term="Compiler" scheme="http://blog.qirenova.com/tags/Compiler/"/>
     
-    <category term="CS323" scheme="https://www.sky-learner.top/tags/CS323/"/>
+    <category term="CS323" scheme="http://blog.qirenova.com/tags/CS323/"/>
     
-    <category term="Parsing" scheme="https://www.sky-learner.top/tags/Parsing/"/>
+    <category term="Parsing" scheme="http://blog.qirenova.com/tags/Parsing/"/>
     
-    <category term="SLR" scheme="https://www.sky-learner.top/tags/SLR/"/>
+    <category term="SLR" scheme="http://blog.qirenova.com/tags/SLR/"/>
     
-    <category term="CLR" scheme="https://www.sky-learner.top/tags/CLR/"/>
+    <category term="CLR" scheme="http://blog.qirenova.com/tags/CLR/"/>
     
-    <category term="LALR" scheme="https://www.sky-learner.top/tags/LALR/"/>
+    <category term="LALR" scheme="http://blog.qirenova.com/tags/LALR/"/>
     
   </entry>
   
