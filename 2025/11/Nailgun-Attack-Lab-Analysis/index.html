@@ -23,30 +23,30 @@
     <meta name="description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nailgun Attack Lab Analysis">
-<meta property="og:url" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/index.html">
+<meta property="og:url" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/index.html">
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="Task 1: Create and Install a Kernel Module simple_module.c 123456789101112131415161718192021&#x2F;* simple_module.c *&#x2F;#include &lt;linux&#x2F;module.h&gt;#include &lt;linux&#x2F;kernel.h&gt;#include &lt;linux&#x2F;init.h">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/accessing_scr_aarch32.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t2_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_3.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_1.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_1.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/T5_a.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t5_b.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t5_b_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t6.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t6_2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q1.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q2.png">
-<meta property="og:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/accessing_scr_aarch32.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t2_1.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t2_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_3.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_1.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t3_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_1.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_3.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t4_4.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/T5_a.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t5_b.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t5_b_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t6.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t6_2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q1.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q2.png">
+<meta property="og:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/q2_2.png">
 <meta property="article:published_time" content="2025-11-26T10:00:00.000Z">
 <meta property="article:modified_time" content="2026-01-27T04:08:44.778Z">
 <meta property="article:author" content="Lin Wenqi">
@@ -55,13 +55,13 @@
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Security">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
+<meta name="twitter:image" content="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/t1_2.png">
 
 
-<link rel="canonical" href="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/">
+<link rel="canonical" href="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/","path":"2025/11/Nailgun-Attack-Lab-Analysis/","title":"Nailgun Attack Lab Analysis"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/","path":"2025/11/Nailgun-Attack-Lab-Analysis/","title":"Nailgun Attack Lab Analysis"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Nailgun Attack Lab Analysis | My Blog</title>
@@ -273,7 +273,7 @@ and Exit</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" hre
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/">
+    <link itemprop="mainEntityOfPage" href="https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">

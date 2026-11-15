@@ -23,7 +23,7 @@
     <meta name="description" content="一、实验目标 在 Windows 11 环境下，利用 MuMu 模拟器（Android 12）配置 Charles 代理，通过手动安装系统级证书及 Frida 动态插桩技术绕过 SSL Pinning，实现对华为应用市场（com.huawei.appmarket）加密流量的明文解析，并导出为标准的 HAR 格式数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Charles 抓包华为应用市场评论实验总结">
-<meta property="og:url" content="http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:url" content="https://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="一、实验目标 在 Windows 11 环境下，利用 MuMu 模拟器（Android 12）配置 Charles 代理，通过手动安装系统级证书及 Frida 动态插桩技术绕过 SSL Pinning，实现对华为应用市场（com.huawei.appmarket）加密流量的明文解析，并导出为标准的 HAR 格式数据">
 <meta property="og:locale" content="zh_CN">
@@ -38,10 +38,10 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
+<link rel="canonical" href="https://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/","path":"2026/03/Charles-抓包华为应用市场评论实验总结/","title":"Charles 抓包华为应用市场评论实验总结"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/","path":"2026/03/Charles-抓包华为应用市场评论实验总结/","title":"Charles 抓包华为应用市场评论实验总结"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Charles 抓包华为应用市场评论实验总结 | My Blog</title>
@@ -247,7 +247,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="https://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.qirenova.com/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://blog.qirenova.com/2026/04/%E8%A7%A3%E5%86%B3-VS-Code-%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91-C-%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2026-04-15</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://blog.qirenova.com/2026/03/Charles-%E6%8A%93%E5%8C%85%E5%8D%8E%E4%B8%BA%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E8%AF%84%E8%AE%BA%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2026-04-15</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/about/index.html</loc>
+    <loc>https://blog.qirenova.com/about/index.html</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/index.html</loc>
+    <loc>https://blog.qirenova.com/tags/index.html</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/categories/index.html</loc>
+    <loc>https://blog.qirenova.com/categories/index.html</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/2026/01/Linux-Disk-Expansion/</loc>
+    <loc>https://blog.qirenova.com/2026/01/Linux-Disk-Expansion/</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/</loc>
+    <loc>https://blog.qirenova.com/2025/11/Nailgun-Attack-Lab-Analysis/</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/2025/11/CS323-Assignment-4/</loc>
+    <loc>https://blog.qirenova.com/2025/11/CS323-Assignment-4/</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/2025/11/Dirty-COW-Attack/</loc>
+    <loc>https://blog.qirenova.com/2025/11/Dirty-COW-Attack/</loc>
     
     <lastmod>2026-01-27</lastmod>
     
@@ -84,7 +84,7 @@
   
 
   <url>
-    <loc>http://blog.qirenova.com/</loc>
+    <loc>https://blog.qirenova.com/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -92,133 +92,133 @@
 
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Compiler/</loc>
+    <loc>https://blog.qirenova.com/tags/Compiler/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/CS323/</loc>
+    <loc>https://blog.qirenova.com/tags/CS323/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Parsing/</loc>
+    <loc>https://blog.qirenova.com/tags/Parsing/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/SLR/</loc>
+    <loc>https://blog.qirenova.com/tags/SLR/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/CLR/</loc>
+    <loc>https://blog.qirenova.com/tags/CLR/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/LALR/</loc>
+    <loc>https://blog.qirenova.com/tags/LALR/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Security/</loc>
+    <loc>https://blog.qirenova.com/tags/Security/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Linux/</loc>
+    <loc>https://blog.qirenova.com/tags/Linux/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Attack/</loc>
+    <loc>https://blog.qirenova.com/tags/Attack/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/ARM/</loc>
+    <loc>https://blog.qirenova.com/tags/ARM/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/vscode/</loc>
+    <loc>https://blog.qirenova.com/tags/vscode/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/cpp/</loc>
+    <loc>https://blog.qirenova.com/tags/cpp/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/remote-development/</loc>
+    <loc>https://blog.qirenova.com/tags/remote-development/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/ssh/</loc>
+    <loc>https://blog.qirenova.com/tags/ssh/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/PacketCapture/</loc>
+    <loc>https://blog.qirenova.com/tags/PacketCapture/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/AndroidSecurity/</loc>
+    <loc>https://blog.qirenova.com/tags/AndroidSecurity/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/Frida/</loc>
+    <loc>https://blog.qirenova.com/tags/Frida/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/CharlesProxy/</loc>
+    <loc>https://blog.qirenova.com/tags/CharlesProxy/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/tags/SSLPinning/</loc>
+    <loc>https://blog.qirenova.com/tags/SSLPinning/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -227,21 +227,21 @@
 
   
   <url>
-    <loc>http://blog.qirenova.com/categories/Computer-Science/</loc>
+    <loc>https://blog.qirenova.com/categories/Computer-Science/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/categories/dev-tools/</loc>
+    <loc>https://blog.qirenova.com/categories/dev-tools/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.qirenova.com/categories/Computer-Science/SecurityResearch/</loc>
+    <loc>https://blog.qirenova.com/categories/Computer-Science/SecurityResearch/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
